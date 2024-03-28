@@ -363,11 +363,15 @@ body {
     .playbar {
         width: 88vw;
     }
+
+    .buttons button:first-child {
+        font-size: 14px;
+    }
+
+    .buttons button:last-child {
+        padding: 9px 22px;
+    }
 }
-
-
-
-
 
 
 
