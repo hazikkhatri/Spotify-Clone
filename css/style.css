@@ -396,10 +396,6 @@ body {
         top: 25px;
     }
 
-    .footer {
-        display: none;
-    }
-
     .songsList ul li {
         margin-bottom: 6px;
         font-size: 13px;
@@ -408,6 +404,10 @@ body {
     .playbar {
         width: 88vw;
         font-size: 12px;
+    }
+
+    .library {
+        min-height: 75vh;
     }
 
     .buttons button:first-child {
