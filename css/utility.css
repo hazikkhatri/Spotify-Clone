@@ -70,6 +70,11 @@
     margin: 5px;
 }
 
+.header-border-radius {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
 .p-1 {
     padding: 10px;
 }

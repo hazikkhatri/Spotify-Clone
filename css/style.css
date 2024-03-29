@@ -63,7 +63,7 @@ body {
 }
 
 .heading {
-    padding: 0 6px;
+    padding: 2px 6px;
     gap: 10px;
     width: 100%;
     margin: 0 12px;
@@ -113,6 +113,7 @@ body {
 }
 
 .right {
+    margin: 5px;
     width: 76vw;
     background-color: #1d1d1d;
     position: relative;
@@ -376,6 +377,7 @@ body {
 
     .right {
         width: 100vw;
+        margin: 0;
     }
 
     .hamburger {
@@ -434,5 +436,13 @@ body {
         width: 10px;
         height: 10px;
         bottom: 5px;
+    }
+
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        width: 90vw;
     }
 }
