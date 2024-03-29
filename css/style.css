@@ -193,8 +193,56 @@ body {
 .card-container {
     flex-wrap: wrap;
     max-height: 70vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
+
+
+
+
+
+
+.songInfo {
+    height: 20px;
+    width: 11rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.songtext {
+    height: 20px;
+    width: auto;
+    white-space: nowrap;
+    text-align: left;
+    transform: translateX(-100%);
+    animation: my-animation 15s linear infinite;
+}
+
+@keyframes my-animation {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .card:hover {
     background-color: #252525;
@@ -244,6 +292,7 @@ body {
     padding: 10px 0;
     background-color: #1fdf64;
     border-radius: 9999px;
+    color: black;
 }
 
 .songBtns {
@@ -293,7 +342,7 @@ body {
 .seekbar {
     position: absolute;
     bottom: 7px;
-    padding: 3px 0;
+    padding: 2px 0;
     height: 0px;
     width: 80%;
     border-radius: 9999px;
@@ -301,12 +350,12 @@ body {
 }
 
 .circle {
-    width: 15px;
-    height: 15px;
+    width: 12px;
+    height: 12px;
     border-radius: 100%;
     position: relative;
     background-color: black;
-    bottom: 7px;
+    bottom: 6px;
     left: 0%;
     transition: left 0.3s ease;
 }
@@ -327,10 +376,6 @@ body {
 
     .right {
         width: 100vw;
-    }
-
-    .playbar {
-        width: 96vw;
     }
 
     .hamburger {
@@ -362,6 +407,7 @@ body {
 
     .playbar {
         width: 88vw;
+        font-size: 12px;
     }
 
     .buttons button:first-child {
@@ -371,49 +417,22 @@ body {
     .buttons button:last-child {
         padding: 9px 22px;
     }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.songInfo {
-    height: 20px;
-    width: 11rem;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.songtext {
-    height: 20px;
-    width: auto;
-    white-space: nowrap;
-    text-align: left;
-    transform: translateX(-100%);
-    animation: my-animation 15s linear infinite;
-}
-
-@keyframes my-animation {
-    from {
-        transform: translateX(-100%);
+    .seekbar {
+        padding: 1px 0;
     }
 
-    to {
-        transform: translateX(100%);
+    .songInfo {
+        width: 6rem;
+    }
+
+    .songtext {
+        font-size: 14px;
+    }
+
+    .circle {
+        width: 10px;
+        height: 10px;
+        bottom: 5px;
     }
 }
