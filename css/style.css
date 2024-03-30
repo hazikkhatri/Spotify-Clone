@@ -358,7 +358,7 @@ body {
     background-color: black;
     bottom: 6px;
     left: 0%;
-    transition: left 0.3s ease;
+    transition: left 0.3s ease-in;
 }
 
 .songBtns img {
