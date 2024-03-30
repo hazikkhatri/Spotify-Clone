@@ -175,6 +175,7 @@ body {
 }
 
 .spotifyPlaylist h1 {
+    display: inline-flex;
     font-size: 24px;
     margin-bottom: 10px;
 }
@@ -404,7 +405,7 @@ body {
     }
 
     .playbar {
-        width: 88vw;
+        width: 89vw;
         font-size: 12px;
     }
 
@@ -422,14 +423,19 @@ body {
 
     .seekbar {
         padding: 1px 0;
+        width: 76%;
     }
 
     .songInfo {
-        width: 6rem;
+        width: 12rem;
     }
 
     .songtext {
         font-size: 14px;
+    }
+
+    .songBtns {
+        margin-bottom: 0px;
     }
 
     .circle {
@@ -444,5 +450,12 @@ body {
 
     .card {
         width: 90vw;
+    }
+
+    .playbar {
+        flex-direction: column;
+        padding: 8px 0;
+        height: 90px;
+        bottom: 10px;
     }
 }
