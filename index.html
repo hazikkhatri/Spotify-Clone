@@ -105,21 +105,29 @@
                         <p>The very best in new music from around the world. Cover: Kacey Musgraves</p>
                     </div>
                 </div>
-                <div class="playbar flex align-center justify-around">
+                <div class="playbar flex justify-center align-center">
                     <div class="seekbar cursor">
                         <div class="circle">
 
                         </div>
                     </div>
-                    <div class="songInfo">
-                        <div class="songtext"></div>
+                    <div class="aboveBar flex align-center justify-between">
+                        <div class="songInfo">
+                            <div class="songtext"></div>
+                        </div>
+                        <div class="songBtns flex justify-around">
+                            <img id="previous" src="img/prevsong.svg" alt="previous song">
+                            <img id="play" class="playNow-hover" src="img/play.svg" alt="play song">
+                            <img id="next" src="img/nextsong.svg" alt="next song">
+                        </div>
+                        <div class="songTime"></div>
                     </div>
-                    <div class="songBtns flex justify-around">
-                        <img id="previous" src="img/prevsong.svg" alt="previous song">
-                        <img id="play" class="playNow-hover" src="img/play.svg" alt="play song">
-                        <img id="next" src="img/nextsong.svg" alt="next song">
+                    <div class="volume">
+                        <img id="volume" class="cursor" src="img/volume.svg" alt="Volume">
+                        <div class="range">
+                            <input class="cursor" type="range" name="volume" id="">
+                        </div>
                     </div>
-                    <div class="songTime"></div>
                 </div>
 
             </div>

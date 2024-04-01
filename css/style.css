@@ -345,6 +345,10 @@ body {
     transform: scale(1.04);
 }
 
+.aboveBar {
+    gap: 220px;
+}
+
 .seekbar {
     position: absolute;
     bottom: 7px;
@@ -370,8 +374,20 @@ body {
     cursor: pointer;
 }
 
+.volume {
+    display: flex;
+    gap: 3px;
+    position: absolute;
+    right: 9px;
+    align-items: center;
+}
 
-@media (max-width: 1400px) {
+input[type=range] {
+    width: 80px;
+    height: 10px;
+}
+
+@media (max-width: 1000px) {
     .left {
         width: 392px;
         position: absolute;
@@ -403,6 +419,13 @@ body {
         top: 25px;
     }
 
+    .aboveBar {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 5px;
+        gap: 1px;
+    }
+
     .songsList {
         height: 460px;
     }
@@ -410,11 +433,6 @@ body {
     .songsList ul li {
         margin-bottom: 6px;
         font-size: 13px;
-    }
-
-    .playbar {
-        width: 89vw;
-        font-size: 12px;
     }
 
     .library {
@@ -469,5 +487,21 @@ body {
         padding: 8px 0;
         height: 90px;
         bottom: 10px;
+        width: 92vw;
+        font-size: 12px;
+    }
+
+    .volume {
+        right: 3px;
+    }
+
+    .volume>img {
+        width: 25px;
+        height: 25px;
+    }
+
+    input[type=range] {
+        width: 58px;
+        height: 7px;
     }
 }

@@ -32,6 +32,7 @@ async function getSongs() {
     }
     return songs;
 }
+
 const playMusic = (track, pause = false) => {
     currentSong.src = "/songs/" + track
     if (!pause) {
@@ -39,8 +40,9 @@ const playMusic = (track, pause = false) => {
         play.src = "/img/pause.svg"
     }
     document.querySelector(".songtext").innerHTML = decodeURI(track)
-    document.querySelector(".songTime").innerHTML = "00:00 / 00:00"
+    document.querySelector(".songTime").innerHTML = "00:00/00:00"
 }
+
 async function main() {
     songs = await getSongs()
     playMusic(songs[0], true)
@@ -58,6 +60,7 @@ async function main() {
         </li>
         `
     }
+
     // attaching event listener to each song
     Array.from(document.querySelector(".songsList").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", () => {
@@ -116,6 +119,13 @@ async function main() {
             playMusic(songs[index + 1])
         }
     })
+
+    // adding an event to volume.
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        console.log("volume set to " + e.target.value);
+        currentSong.volume = parseInt(e.target.value) / 100;
+    })
+
 }
 
 main();

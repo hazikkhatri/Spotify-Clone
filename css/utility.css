@@ -61,6 +61,8 @@
     transition: all 500ms ease;
 }
 
+
+
 .hover:hover {
     color: #fff;
     text-decoration: underline;
