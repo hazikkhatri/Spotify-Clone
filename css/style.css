@@ -308,6 +308,10 @@ body {
     width: 100%;
 }
 
+.info {
+    font-size: 13px;
+}
+
 .info img {
     display: flex;
     margin: 0 0 0 auto;
@@ -399,6 +403,10 @@ body {
         top: 25px;
     }
 
+    .songsList {
+        height: 460px;
+    }
+
     .songsList ul li {
         margin-bottom: 6px;
         font-size: 13px;
@@ -410,7 +418,7 @@ body {
     }
 
     .library {
-        min-height: 75vh;
+        min-height: 77vh;
     }
 
     .buttons button:first-child {
@@ -436,6 +444,10 @@ body {
 
     .songBtns {
         margin-bottom: 0px;
+    }
+
+    .footer {
+        display: none;
     }
 
     .circle {

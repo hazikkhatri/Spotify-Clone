@@ -1,5 +1,6 @@
 console.log("Lets go");
 let currentSong = new Audio();
+let songs;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -41,7 +42,7 @@ const playMusic = (track, pause = false) => {
     document.querySelector(".songTime").innerHTML = "00:00 / 00:00"
 }
 async function main() {
-    let songs = await getSongs()
+    songs = await getSongs()
     playMusic(songs[0], true)
 
     // showing songs in playlist
@@ -81,19 +82,39 @@ async function main() {
         document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
     })
 
-    // adding an event listener to seekbar
+    // adding an event listener to seekbar.
     document.querySelector(".seekbar").addEventListener("click", e => {
         let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
         document.querySelector(".circle").style.left = percent + "%";
         currentSong.currentTime = ((currentSong.duration) * percent) / 100;
     })
-    // adding an event listener to hamburger to open button
+
+    // adding an event listener to hamburger to open button.
     document.querySelector(".hamburger").addEventListener("click", () => {
         document.querySelector(".left").style.left = "0"
     })
-    // adding an event listener to hamburger to close button
+
+    // adding an event listener to hamburger to close button.
     document.querySelector(".close").addEventListener("click", () => {
         document.querySelector(".left").style.left = "-110%"
+    })
+
+    //adding event listeners to previous and next buttons.
+    previous.addEventListener("click", () => {
+        console.log("previous clicked");
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index - 1) >= 0) {
+            playMusic(songs[index - 1])
+        }
+    })
+
+    next.addEventListener("click", () => {
+        currentSong.pause()
+        console.log("next clicked");
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0])
+        if ((index + 1) < songs.length) {
+            playMusic(songs[index + 1])
+        }
     })
 }
 
