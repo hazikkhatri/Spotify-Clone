@@ -69,7 +69,7 @@ async function main() {
         })
     })
 
-    // Attach event listener to next and previous
+    // Attach event listener to play and pause
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play()
@@ -126,6 +126,16 @@ async function main() {
         currentSong.volume = parseInt(e.target.value) / 100;
     })
 
+    // adding an event listener to mute and unmute
+    volControl.addEventListener("click", (e) => {
+        if (currentSong.volume > 0) {
+            currentSong.volume = 0;
+            volControl.src = "/img/volume-mute.svg";
+        } else {
+            currentSong.volume = 0.5;
+            volControl.src = "/img/volume.svg";
+        }
+    })
 }
 
 main();

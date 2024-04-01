@@ -280,6 +280,7 @@ body {
     bottom: 100px;
     right: 20px;
     transition: all .5s ease-in;
+    display: none;
 }
 
 .close {
@@ -387,7 +388,7 @@ input[type=range] {
     height: 10px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     .left {
         width: 392px;
         position: absolute;
@@ -479,7 +480,7 @@ input[type=range] {
     }
 
     .card {
-        width: 90vw;
+        width: 30vw;
     }
 
     .playbar {
@@ -492,7 +493,8 @@ input[type=range] {
     }
 
     .volume {
-        right: 3px;
+        right: 17px;
+        bottom: 16px;
     }
 
     .volume>img {
@@ -503,5 +505,11 @@ input[type=range] {
     input[type=range] {
         width: 58px;
         height: 7px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        width: 65vw;
     }
 }
