@@ -124,15 +124,21 @@ async function main() {
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         console.log("volume set to " + e.target.value);
         currentSong.volume = parseInt(e.target.value) / 100;
+        if (currentSong.volume == 0) {
+            volControl.src = "/img/volume-mute.svg";
+        } else {
+            volControl.src = "/img/volume.svg";
+        }
     })
-
-    // adding an event listener to mute and unmute
+    // adding an event listener to mute and unmute to volume icon
+    let previousVol = 0.5;
     volControl.addEventListener("click", (e) => {
         if (currentSong.volume > 0) {
+            previousVol = currentSong.volume
             currentSong.volume = 0;
             volControl.src = "/img/volume-mute.svg";
         } else {
-            currentSong.volume = 0.5;
+            currentSong.volume = previousVol;
             volControl.src = "/img/volume.svg";
         }
     })
