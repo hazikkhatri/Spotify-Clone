@@ -29,7 +29,6 @@ body {
     align-items: center;
     color: #a7a7a7;
     gap: 20px;
-    /* margin: 4px 0; */
     cursor: pointer;
     text-decoration: none;
     transition: all 500ms ease;
@@ -198,11 +197,6 @@ body {
     overflow-y: auto;
 }
 
-
-
-
-
-
 .songInfo {
     height: 20px;
     width: 11rem;
@@ -228,23 +222,6 @@ body {
         transform: translateX(100%);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .card:hover {
     background-color: #252525;

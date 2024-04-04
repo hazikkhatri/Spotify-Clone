@@ -61,6 +61,9 @@
     transition: all 500ms ease;
 }
 
+.scale-hover:hover {
+    transform: scale(1.04);
+}
 
 
 .hover:hover {
@@ -99,11 +102,9 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: #333;
-    /* Dark color for the thumb */
     border-radius: 6px;
 }
 
 ::-webkit-scrollbar-track {
     background-color: #222;
-    /* Dark color for the track */
 }
