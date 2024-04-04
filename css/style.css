@@ -90,9 +90,10 @@ body {
 
 .footer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     margin: 12px 12px;
-    padding: 0 24px;
+    padding: 0px 10px;
     text-align: start;
     position: absolute;
     bottom: 0;
