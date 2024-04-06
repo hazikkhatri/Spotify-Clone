@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
 
+:root {
+    --a: 0;
+}
+
 * {
     user-select: none;
     font-family: "Lexend";
@@ -226,6 +230,7 @@ body {
 
 .card:hover {
     background-color: #252525;
+    --a: 1;
 }
 
 .card h2 {
@@ -257,8 +262,12 @@ body {
     position: absolute;
     bottom: 100px;
     right: 20px;
-    transition: all .5s ease-in;
-    display: none;
+    opacity: var(--a);
+    transition: all .2s;
+}
+
+.play:hover {
+    transform: scale(1.08);
 }
 
 .close {

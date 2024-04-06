@@ -1,6 +1,7 @@
 console.log("Lets go");
 let currentSong = new Audio();
 let songs;
+let currFolder;
 
 function secondsToMinutesSeconds(seconds) {
     if (isNaN(seconds) || seconds < 0) {
@@ -16,8 +17,9 @@ function secondsToMinutesSeconds(seconds) {
     return `${formattedMinutes}:${formattedSeconds}`;
 }
 
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:3000/songs/")
+async function getSongs(folder) {
+    currFolder = folder;
+    let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
     let response = await a.text();
     console.log(response)
     let div = document.createElement("div")
@@ -27,14 +29,14 @@ async function getSongs() {
     for (let index = 0; index < as.length; index++) {
         const element = as[index];
         if (element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1])
+            songs.push(element.href.split(`/${folder}/`)[1])
         }
     }
     return songs;
 }
 
 const playMusic = (track, pause = false) => {
-    currentSong.src = "/songs/" + track
+    currentSong.src = `/${currFolder}/` + track
     if (!pause) {
         currentSong.play()
         play.src = "/img/pause.svg"
@@ -44,7 +46,7 @@ const playMusic = (track, pause = false) => {
 }
 
 async function main() {
-    songs = await getSongs()
+    songs = await getSongs("songs/ncs")
     playMusic(songs[0], true)
 
     // showing songs in playlist
@@ -141,6 +143,13 @@ async function main() {
             currentSong.volume = previousVol;
             volControl.src = "/img/volume.svg";
         }
+    })
+
+    //call the playlist when the card is clicked.
+    Array.from(document.getElementsByClassName("card")).forEach(e => {
+        e.addEventListener("click", async item => {
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`)
+        })
     })
 }
 
