@@ -14,6 +14,7 @@
 body {
     background-color: black;
     color: white;
+    scroll-behavior: smooth;
 }
 
 .left {
@@ -117,16 +118,17 @@ body {
 }
 
 .right {
+    background-color: #121212;
     margin: 5px;
     width: 76vw;
-    background-color: #1d1d1d;
+    /* background-color: #1d1d1d; */
     position: relative;
 }
 
 .header {
     height: 64px;
     width: 100%;
-    background-color: #101010;
+    background-color: #0f0f0f;
 }
 
 .nav>span {
@@ -189,7 +191,7 @@ body {
 }
 
 .card {
-    width: 200px;
+    width: 175px;
     gap: 0.5rem;
     transition: all 200ms ease-in;
     border-radius: 7px;
@@ -198,7 +200,7 @@ body {
 
 .card-container {
     flex-wrap: wrap;
-    max-height: 70vh;
+    max-height: 67vh;
     overflow-y: auto;
 }
 
@@ -260,7 +262,7 @@ body {
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 100px;
+    bottom: 72px;
     right: 20px;
     opacity: var(--a);
     transition: all .2s;
@@ -355,7 +357,7 @@ body {
     background-color: black;
     bottom: 6px;
     left: 0%;
-    transition: left 0.3s ease-in;
+    transition: left 0.2s ease;
 }
 
 .songBtns img {
@@ -375,7 +377,7 @@ input[type=range] {
     height: 10px;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .left {
         width: 392px;
         position: absolute;
@@ -495,8 +497,60 @@ input[type=range] {
     }
 }
 
-@media (max-width: 400px) {
+@media screen and (max-width: 400px) {
     .card {
         width: 65vw;
+    }
+}
+
+@media screen and (max-width: 351px) {
+    .left {
+        width: 320px;
+        left: -120%;
+    }
+
+    .songsList {
+        height: 315px;
+    }
+
+    .nav>span {
+        margin-left: 5px;
+    }
+
+    .card-container {
+        max-height: 62vh;
+    }
+
+    .playbar {
+        height: 70px;
+        font-size: 11px;
+    }
+
+    .songtext {
+        font-size: 11px;
+    }
+
+    .volume {
+        right: 3px;
+        bottom: 31px;
+        gap: 0;
+    }
+
+    .volume>img {
+        width: 22px;
+        height: 22px;
+    }
+
+    input[type=range] {
+        width: 58px;
+        height: 7px;
+    }
+
+    .songBtns {
+        gap: 5px
+    }
+
+    .songBtns>img {
+        height: 30px;
     }
 }
